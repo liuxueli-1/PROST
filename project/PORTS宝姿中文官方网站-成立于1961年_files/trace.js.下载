@@ -1,0 +1,91 @@
+var urls=window.location.pathname+window.location.search;
+var ptcd='';
+
+if(urls.indexOf('ptcd')>=0){
+   var pathurl = window.location.pathname;
+   var hmpl='';
+
+   if(pathurl.indexOf('ptcd')>=0){
+      var patharr = pathurl.split('/');
+      for(var i=0;i<patharr.length;i++){
+         if(patharr[i]=='ptcd' && (i+1)<patharr.length){
+            ptcd=patharr[i+1];
+         }
+
+         if(patharr[i]=='hmpl' && (i+1)<patharr.length){
+            hmpl=patharr[i+1];
+         }
+      }
+   }else{
+      var searchurl=window.location.search;
+      searchurl=searchurl.replace('?','');
+
+      var patharr = searchurl.split('&');
+
+      for(var i=0;i<patharr.length;i++){
+         var tempArr=patharr[i].split('=');
+
+         if(tempArr[0]=='ptcd'){
+            ptcd=tempArr[1];
+         }
+
+         if(tempArr[0]=='hmpl'){
+            hmpl=tempArr[1];
+         }
+      }
+   }
+
+   function setCookie(c_name,value,expiredays){
+      var exdate=new Date()
+      exdate.setDate(exdate.getDate()+expiredays)
+      document.cookie=c_name+ "=" +escape(value)+
+      ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())+";domain=.ports-intl.com;path=/"
+   }
+
+   function getCookie(c_name)
+   {
+   if (document.cookie.length>0)
+     {
+     c_start=document.cookie.indexOf(c_name + "=")
+     if (c_start!=-1)
+       { 
+       c_start=c_start + c_name.length+1 
+       c_end=document.cookie.indexOf(";",c_start)
+       if (c_end==-1) c_end=document.cookie.length
+       return unescape(document.cookie.substring(c_start,c_end))
+       } 
+     }
+   return ""
+   }
+
+   if(ptcd.length>0){
+      setCookie('PORTSLABEL',ptcd,1);
+   }else if(hmpl.length>0){
+      setCookie('PORTSLABEL',hmpl,1);
+   }
+   
+}
+
+
+
+if(ptcd.length>0){
+   setTimeout(function(){
+      var cookiedata = {};
+      cookiedata.mobile = getCookie('PORTSMOBILE');
+      cookiedata.vipno = getCookie('PORTSVIPCARD');
+      cookiedata.empyid = getCookie('PORTSEMPYID');
+      cookiedata.label = getCookie('PORTSLABEL');
+      $.ajax({
+         type: "POST",
+         url: "https://space.ports-intl.com/Ports/cdn/trace/index.php",
+         headers: {},
+         data: cookiedata,
+         dataType: "json",// html/json/jsonp/xml
+         success: function(msg){
+         },
+         error: function(){
+            
+         }
+      });
+   },500);
+}

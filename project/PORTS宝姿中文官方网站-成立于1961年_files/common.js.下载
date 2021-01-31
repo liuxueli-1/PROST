@@ -1,0 +1,134 @@
+var common = {};
+
+common.web = $("#commonjs").data("web");/*获取网站所在zh  mobile*/
+
+common.push = function(url){
+    window.location.href=url;
+};
+
+common.reload = function(url){
+    window.location.reload();
+};
+
+common.checkApiReturn = function(json){
+    if(json==null){
+        $.toast("网络出现异常", "forbidden");
+        return false;
+    }else if(json.statusCode == 0){
+        if(json.message!='') {
+            $.toast(json.message, "forbidden");
+        }
+        if(json.url!='') {
+            if(json.message!='') {
+                setTimeout(function(){common.push('/'+common.web+json.url)}, json.time);
+            }else{
+                common.push('/'+common.web+json.url);
+            }
+        }
+        return false;
+    }else if(json.statusCode == 1){
+        if(json.message!='') {
+            $.toast(json.message,parseInt(json.keep));
+        }
+        if(json.url!='') {
+            if(json.message!='') {
+                setTimeout(function(){common.push('/'+common.web+json.url)}, json.time);
+            }else{
+                common.push('/'+common.web+json.url);
+            }
+        }
+        return true;
+    }else{
+        $.toast("未知错误", "forbidden");
+        console.log(json);
+        return false;
+    }
+};
+
+common.message = function(message,type) {
+    if(message!="") {
+        if(type=='success'){
+            $.toast(message);
+        }else if(type=='cancel'){
+            $.toast(message,'cancel');
+        }else if(type=='text'){
+            $.toast(message,'text');
+        }else{
+            $.toast(message, "forbidden");
+        }
+    }
+};
+
+
+/*-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+
+
+$(function(){
+    
+    $("select.setvalue").each(function(){
+        $(this).val($(this).data('value'));
+    });
+
+    $("input:radio.setvalue").each(function(index, el) {
+        if($(this).val() == $(this).data('value')){
+            $(this).attr('checked','checked')
+        }
+    });
+
+    $("select[name=bi_year],select[name=bi_month]").change(function(){
+        nian = $("select[name=bi_year]").val();
+        yue = $("select[name=bi_month]").val();
+        
+        //修改日期是否有效
+        if(!$("select[name=bi_day]").prop("disabled")) {
+            changedate(nian,yue);
+        }
+    });
+
+    ri = $("select[name=bi_day]").attr("data-value");  
+    if(ri!="") {
+        nian = $("select[name=bi_year]").val();
+        yue = $("select[name=bi_month]").val();
+        changedate(nian,yue);
+        $("select[name=bi_day]").val(ri);
+    }
+
+    $(document).on('click','input.jump_page',function(){
+        cur = $(this).parent().find('input[name=page]');
+        url = cur.data('url');
+        page = cur.val();
+        var reg = /^\d+(?=\.{0,1}\d+$|$)/;
+        if(reg.test(page)) {
+            common.push(url+'&page='+page);
+        }
+    });
+
+    $('.imgdiv img').mouseover(function(e){
+        var that = $(this);
+        var hin = that.attr("alt");
+        if(hin == undefined) {
+            hin = 'bounceIn';
+        }
+        that.addClass(hin);
+        that.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass(hin);
+        });
+    }); 
+})
+
+
+
+
+function changedate(nian,yue) {
+    if(nian!="" && yue!="") {
+        var day = new Date(nian,yue,0); 
+        var daycount = day.getDate();
+        neirong = '<option value="0">- 请选择 -</option>';
+        for(var i=1;i<=daycount;i++) {
+            neirong+= "<option value='"+i+"'>"+i+"</option>";
+        }
+        $("select[name=bi_day]").html(neirong); 
+    }   
+}

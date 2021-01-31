@@ -1,0 +1,28 @@
+try{document.open();}catch(e){;}
+var live800_companyID="114746";
+var live800_protocol="https:";
+var live800_isMobile="0";
+var jsessionId = ";jsessionid=CA8413FE9AB95B011CC5CEA2601F2782";
+try{
+if(navigator.cookieEnabled && navigator.platform !== "iPhone" && navigator.platform !== "iPad"){jsessionId = "";}
+}catch(e){}
+var enterurl = null;
+enterurl="https%3A%2F%2Fwww.ports-intl.com%2F";
+var isOldSkin=false;
+var server_prefix_list=['https://chat16.live800.com/live800'];
+var isNeedCheckDomainBinding=false;
+var globalWindowAttribute='toolbar=0,scrollbars=0,location=0,menubar=0,resizable=1,width=920,height=620';
+live800_chatVersion="5";
+live800_initialIcon_config="initialIconStyle=1";
+jid="2326992637";
+var live800_baseUrl="chat16.live800.com";
+var live800_baseHtmlUrl="chat16.live800.com";
+var live800_baseWebApp="/live800";
+var live800_baseChatHtmlDir="/chatClient";
+live800_Language="zh";
+live800_configID="41906";
+live800_codeType="custom";
+live800_configContent="live800_text=%25u5728%25u7EBF%25u5BA2%25u670D&live800_skill=5068&live800_switch=1&isUseHttps=1";
+var skill={id:5068,isOnline:true};
+
+document.write("<scr"+"ipt language=\"javascript\" src=\"https://chat16.live800.com/live800/chatClient/textStatic.js\"></scr"+"ipt>");
