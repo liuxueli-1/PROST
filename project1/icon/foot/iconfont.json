@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1314475",
+      "name": "我的",
+      "font_class": "daohanglan-05",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "3216144",
+      "name": "消息",
+      "font_class": "icon--",
+      "unicode": "e744",
+      "unicode_decimal": 59204
+    },
+    {
+      "icon_id": "5648855",
+      "name": "文档",
+      "font_class": "wendang",
+      "unicode": "e520",
+      "unicode_decimal": 58656
+    },
+    {
+      "icon_id": "12820180",
+      "name": "通讯录",
+      "font_class": "tongxunlu",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "17258699",
+      "name": "工作台",
+      "font_class": "gongzuotai",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    }
+  ]
+}
