@@ -153,3 +153,9 @@ footer i{
     font-size: 0.22rem;
     color: #000000;
 }
+.hehe1-1:hover,.hehe1-1:focus{
+    color: #0058df;
+}
+footer i:hover,footer i:focus{
+    color: #0058df;
+}

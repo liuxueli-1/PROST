@@ -1,0 +1,199 @@
+/* 清除样式 */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+input{
+    outline: none;
+    border: none;
+    background-color: #ecedef;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+html{
+    font-size: 26.67vw;
+}
+header{
+    padding-top: 0.3rem;
+    height: 0.505rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between; 
+}
+.headbox1{
+    height: 0.505rem;
+    width: 0.75rem;
+    font-size: 0.2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0.505rem;
+}
+.headbox2{
+    height: 0.505rem;
+    width: 1.09rem;
+    display: flex;
+    align-items: center;
+}
+.headbox2 img{
+    width: 0.93rem;
+    height: 0.34rem;
+}
+nav{
+    height: 1.79rem;
+    width: 100%;
+}
+/* banner图 */
+.banner img{
+    height: 1.41rem;
+    margin-left: 2px;
+}
+/* 搜索 */
+.sousuo{
+    width: 3.51rem;
+    height: 0.38rem;
+    background-color: #ecedef;
+    position: relative;
+    top: -0.3rem;
+    left: 0.12rem;
+    border-radius: 0.19rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sousuo1{
+    font-size: 0.15rem;
+    width: 0.52rem;
+    height: 0.27rem;
+    text-align: center;
+    line-height: 0.27rem;
+    background-color: #0189fd;
+    border-radius: 0.19rem;
+    margin-left: 0.3rem;
+}
+main{
+    width: 100%;
+    background-color: white;
+    overflow: auto;
+    flex: 1;
+    display: flex;  
+    flex-direction: column;
+    align-items: center; 
+}
+main .box1{
+    width: 3.51rem;
+    height: 0.45rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box1-1,.box1-2,.box1-3,.box1-4{
+    width: 0.81rem;
+    height: 0.25rem;
+    background-color: #f3f4f6;border-radius: 0.1rem;
+    font-size: 0.14rem;
+    text-align: center;
+    line-height: 0.25rem;
+}
+main .box2{
+    width: 3.51rem;
+    height: 1.46rem;
+}
+.box2-1,.box2-2{
+    height: 0.77rem;
+    display: flex;
+}
+.hehe1,.hehe2,.hehe3,.hehe4,.hehe5{
+    width: 25%;
+    height: 0.77rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.txt{
+    font-size: 0.12rem;
+    margin-top: 0.1rem;
+    color: #2e333a;
+}
+.box2 img{
+    width: 0.36rem;
+    height: 0.33rem;
+}
+main .box3{
+    width: 3.51rem;
+    height: 1.37rem;
+    margin: 0.12rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+.box3 .box1,.box3 .box2{
+    width: 1.7rem;
+    height: 1.37rem;
+    background-color: #f3f4f6;
+    border-radius: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.txt1{
+    width: 1.7rem;
+    height: 0.15rem;
+    font-size: 0.16rem;
+    color: #07151f;
+    text-indent: 0.1rem;
+}
+.txt2{
+    width: 1.7rem;
+    height:0.27rem;
+    font-size: 0.11rem;
+    color: #2181cc;
+    line-height: 0.27rem;
+    text-indent: 0.1rem;
+}
+.box3 img{
+    width: 1.53rem;
+    height: 0.73rem;
+}
+footer{
+    width: 100%;
+    height: 0.53rem;
+    background-color: #f5f4f9;;
+    border-top: 1px solid #cdcdce;
+    display: flex;
+    justify-content: space-around;
+}
+.he1,.he2,.he3,.he4,.he5{
+    width: 20%;
+    height: 0.53rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer .iconfont{
+    font-size: 0.3rem;
+    color: #7a838c;
+}
+.txt4{
+    font-size: 0.11rem;
+    color: #7a838c;
+}
+#txt44 a{
+    font-size: 0.11rem;
+    color: #7a838c;
+}
+.txt4:hover,.txt4:focus{
+    color: #2181cc;
+}
+i:hover,i:focus{
+    color: #2181cc;
+}

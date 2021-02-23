@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1221246",
+      "name": "广场",
+      "font_class": "guangchang",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "3267410",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "3892248",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "12897851",
+      "name": "叉 ",
+      "font_class": "cha-",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "14998260",
+      "name": "解决方案池",
+      "font_class": "jiejuefanganchi",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "15726800",
+      "name": "服 务",
+      "font_class": "fuwu",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "18427972",
+      "name": "WIFI filled icon",
+      "font_class": "WIFIfilledicon",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    }
+  ]
+}
